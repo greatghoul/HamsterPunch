@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>仓鼠签到站 · 本地演示</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 40px;
+        font-family: "Segoe UI", "PingFang SC", system-ui, sans-serif;
+        background: #fff7ed;
+        color: #3f2d1d;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #f59e0b;
+        color: #3f2d1d;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      input {
+        padding: 8px 12px;
+        border: 1px solid #d6c3ad;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+      .success {
+        color: #15803d;
+        font-weight: 600;
+      }
+      .long {
+        margin-top: 32px;
+        padding: 24px;
+        border: 1px dashed #d6c3ad;
+        border-radius: 12px;
+        color: #8a7361;
+        line-height: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🐹 仓鼠签到站（本地演示）</h1>
+    <p id="welcome">欢迎回来，访客</p>
+
+    <!-- 签到按钮延迟 2 秒才出现，模拟动态渲染 -->
+    <p>
+      <button id="signin-btn" type="button" style="display: none">每日签到</button>
+    </p>
+    <p id="msg"></p>
+
+    <form id="nickname-form">
+      <input id="nickname" placeholder="输入昵称再签到" />
+      <button type="submit">提交昵称</button>
+    </form>
+
+    <div class="long">
+      长页面区域——用于测试 scroll 动作（滚到底部 / 滚到元素）。<br />
+      这里只有装饰内容。
+    </div>
+
+    <script>
+      setTimeout(() => {
+        document.getElementById("signin-btn").style.display = "inline-block";
+      }, 2000);
+
+      let done = false;
+      document.getElementById("signin-btn").addEventListener("click", () => {
+        if (done) return;
+        done = true;
+        setTimeout(() => {
+          const msg = document.getElementById("msg");
+          msg.textContent = "已签到，获得 1 颗瓜子 🌻";
+          msg.className = "success";
+        }, 1500);
+      });
+
+      document.getElementById("nickname-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const nickname = document.getElementById("nickname").value.trim();
+        document.getElementById("welcome").textContent = nickname
+          ? `欢迎回来，${nickname}`
+          : "欢迎回来，访客";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+{
+  "extName": {
+    "message": "Hamster Punch",
+    "description": "확장 프로그램 이름."
+  },
+  "extDescription": {
+    "message": "브라우저에서 매일 출석 체크를 기록해 주는 작은 햄스터 도우미입니다.",
+    "description": "Chrome 웹스토어와 확장 프로그램 페이지에 표시되는 설명."
+  },
+  "actionTitle": {
+    "message": "Hamster Punch 열기",
+    "description": "툴바 아이콘의 툴팁."
+  },
+  "scriptsTitle": {
+    "message": "출석 스크립트",
+    "description": "스크립트 목록 화면의 제목."
+  },
+  "newScript": {
+    "message": "＋ 새 스크립트",
+    "description": "편집기를 열어 새 스크립트를 만드는 버튼."
+  },
+  "emptyScripts": {
+    "message": "아직 스크립트가 없습니다. 「새 스크립트」로 만들어 보세요.",
+    "description": "스크립트 목록이 비어 있을 때 표시."
+  },
+  "runBtn": {
+    "message": "실행",
+    "description": "스크립트를 실행하는 버튼."
+  },
+  "editBtn": {
+    "message": "편집",
+    "description": "스크립트를 편집기로 여는 버튼."
+  },
+  "deleteBtn": {
+    "message": "삭제",
+    "description": "스크립트를 삭제하는 버튼."
+  },
+  "confirmDelete": {
+    "message": "이 스크립트를 삭제할까요?",
+    "description": "스크립트 삭제 확인 대화상자."
+  },
+  "namePlaceholder": {
+    "message": "스크립트 이름",
+    "description": "편집기의 스크립트 이름 입력란 플레이스홀더."
+  },
+  "untitled": {
+    "message": "제목 없는 스크립트",
+    "description": "이름이 비어 있을 때 쓰는 기본 스크립트 이름."
+  },
+  "newTitle": {
+    "message": "새 스크립트",
+    "description": "스크립트 생성 시 편집기 제목."
+  },
+  "editTitle": {
+    "message": "스크립트 편집",
+    "description": "기존 스크립트 편집 시 편집기 제목."
+  },
+  "save": {
+    "message": "저장",
+    "description": "검증 후 스크립트를 저장하는 버튼."
+  },
+  "cancel": {
+    "message": "취소",
+    "description": "변경을 버리고 목록으로 돌아가는 버튼."
+  },
+  "invalidJson": {
+    "message": "JSON 파싱 실패: ",
+    "description": "JSON 파싱 오류 메시지 접두사."
+  },
+  "stepError": {
+    "message": "$STEP$단계: $REASON$",
+    "placeholders": {
+      "step": { "content": "$1" },
+      "reason": { "content": "$2" }
+    },
+    "description": "특정 단계를 가리키는 검증 오류. $STEP$은 1부터 시작하는 단계 번호, $REASON$은 원인."
+  },
+  "runTitle": {
+    "message": "실행",
+    "description": "실행 화면 제목 접두사. 뒤에 스크립트 이름이 붙음."
+  },
+  "runningStatus": {
+    "message": "실행 중…",
+    "description": "스크립트 실행 중 상태 줄."
+  },
+  "runSuccess": {
+    "message": "✅ 성공",
+    "description": "스크립트가 끝까지 성공했을 때의 최종 상태."
+  },
+  "runFailed": {
+    "message": "❌ 실패",
+    "description": "스크립트가 실패했을 때의 최종 상태."
+  },
+  "runAborted": {
+    "message": "중지됨",
+    "description": "사용자가 중지했을 때의 최종 상태."
+  },
+  "stopBtn": {
+    "message": "중지",
+    "description": "실행 중인 스크립트를 중단하는 버튼."
+  },
+  "backToList": {
+    "message": "목록으로",
+    "description": "실행 화면에서 목록으로 돌아가는 버튼."
+  },
+  "statusPending": {
+    "message": "대기 중",
+    "description": "아직 실행되지 않은 단계 배지."
+  },
+  "statusRunning": {
+    "message": "실행 중",
+    "description": "실행 중인 단계 배지."
+  },
+  "statusOk": {
+    "message": "성공",
+    "description": "성공한 단계 배지."
+  },
+  "statusSkipped": {
+    "message": "건너뜀",
+    "description": "선택 단계가 실패해 건너뛴 배지."
+  },
+  "statusFailed": {
+    "message": "실패",
+    "description": "실패한 단계 배지."
+  },
+  "lastRunLabel": {
+    "message": "마지막: ",
+    "description": "목록의 마지막 실행 요약 접두사."
+  },
+  "neverRun": {
+    "message": "실행 기록 없음",
+    "description": "한 번도 실행되지 않은 스크립트의 설명."
+  },
+  "stepsUnit": {
+    "message": "단계",
+    "description": "단계 수 단위 (예: 「5단계»)."
+  },
+  "alreadyRunning": {
+    "message": "이미 스크립트가 실행 중입니다",
+    "description": "두 번째 실행을 시작하려 할 때 표시."
+  },
+  "runFailedToStart": {
+    "message": "실행을 시작할 수 없음: 백그라운드를 사용할 수 없습니다. 확장 프로그램을 다시 로드해 주세요.",
+    "description": "백그라운드 service worker 연결이 끊겼을 때 표시."
+  },
+  "errNotArray": {
+    "message": "스크립트는 단계 배열이어야 합니다",
+    "description": "검증 오류: JSON 루트가 배열이 아님."
+  },
+  "errEmpty": {
+    "message": "단계가 1개 이상 필요합니다",
+    "description": "검증 오류: 단계 배열이 비어 있음."
+  },
+  "errTooMany": {
+    "message": "단계 수가 상한(100)을 초과했습니다",
+    "description": "검증 오류: 단계 수 초과."
+  },
+  "errStepObject": {
+    "message": "단계는 객체여야 합니다",
+    "description": "검증 오류: 단계가 객체가 아님."
+  },
+  "errStepName": {
+    "message": "name은 빈 문자열일 수 없습니다",
+    "description": "검증 오류: 단계 이름이 빈 문자열."
+  },
+  "errUnknownAction": {
+    "message": "알 수 없는 동작: $ACTION$",
+    "placeholders": {
+      "action": { "content": "$1" }
+    },
+    "description": "검증 오류: 동작 이름이 내장 목록에 없음. $ACTION$은 입력값."
+  },
+  "errSelectorRequired": {
+    "message": "selector가 필요합니다",
+    "description": "검증 오류: CSS 선택자 누락."
+  },
+  "errUrlRequired": {
+    "message": "url은 http(s) 링크여야 합니다",
+    "description": "검증 오류: open 단계의 url 누락 또는 스킴 오류."
+  },
+  "errValueRequired": {
+    "message": "문자열 값이 필요합니다",
+    "description": "검증 오류: 필수 문자열 매개변수 누락."
+  },
+  "errMissing": {
+    "message": "매개변수가 누락되었습니다",
+    "description": "검증 오류: 필수 숫자 매개변수 누락. 필드명은 코드에서 덧붙임."
+  },
+  "errKeyRequired": {
+    "message": "key가 필요합니다 (예: Enter/Esc/Tab)",
+    "description": "검증 오류: press 단계의 키 이름 누락."
+  },
+  "errToInvalid": {
+    "message": "to는 top/bottom/selector/y 중 하나여야 합니다",
+    "description": "검증 오류: 스크롤 대상이 잘못됨."
+  },
+  "errScrollSelector": {
+    "message": "to가 selector일 때는 selector가 필요합니다",
+    "description": "검증 오류: 요소 스크롤에 선택자 누락."
+  },
+  "errBehavior": {
+    "message": "behavior는 auto/smooth/instant 중 하나여야 합니다",
+    "description": "검증 오류: 스크롤 동작 지정이 잘못됨."
+  },
+  "errNotBoolean": {
+    "message": "true/false여야 합니다",
+    "description": "검증 오류: 불리언 매개변수에 다른 타입이 지정됨."
+  },
+  "errNumRange": {
+    "message": "숫자가 허용 범위를 벗어났습니다",
+    "description": "숫자 매개변수가 범위를 벗어난 검증 오류. 필드명과 범위는 코드에서 덧붙임."
+  }
+}

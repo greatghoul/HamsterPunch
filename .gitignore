@@ -1,0 +1,14 @@
+# 打包产物
+*.zip
+*.crx
+*.pem
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+
+# ZCode 会话数据
+.zcode/

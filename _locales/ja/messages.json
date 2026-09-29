@@ -1,0 +1,213 @@
+{
+  "extName": {
+    "message": "Hamster Punch",
+    "description": "拡張機能の名前。"
+  },
+  "extDescription": {
+    "message": "毎日のチェックインをブラウザで記録する、小さなハムスターのアシスタントです。",
+    "description": "Chrome ウェブストアと拡張機能ページに表示される説明。"
+  },
+  "actionTitle": {
+    "message": "Hamster Punch を開く",
+    "description": "ツールバーアイコンのツールチップ。"
+  },
+  "scriptsTitle": {
+    "message": "チェックインスクリプト",
+    "description": "スクリプト一覧ビューの見出し。"
+  },
+  "newScript": {
+    "message": "＋ 新規スクリプト",
+    "description": "エディタを開いてスクリプトを新規作成するボタン。"
+  },
+  "emptyScripts": {
+    "message": "スクリプトはまだありません。「新規スクリプト」から作成しましょう。",
+    "description": "スクリプト一覧が空のときのプレースホルダー。"
+  },
+  "runBtn": {
+    "message": "実行",
+    "description": "スクリプトを実行するボタン。"
+  },
+  "editBtn": {
+    "message": "編集",
+    "description": "スクリプトをエディタで開くボタン。"
+  },
+  "deleteBtn": {
+    "message": "削除",
+    "description": "スクリプトを削除するボタン。"
+  },
+  "confirmDelete": {
+    "message": "このスクリプトを削除しますか？",
+    "description": "スクリプト削除時の確認ダイアログ。"
+  },
+  "namePlaceholder": {
+    "message": "スクリプト名",
+    "description": "エディタのスクリプト名入力欄のプレースホルダー。"
+  },
+  "untitled": {
+    "message": "無題のスクリプト",
+    "description": "名前が空のときに使われる既定のスクリプト名。"
+  },
+  "newTitle": {
+    "message": "新規スクリプト",
+    "description": "スクリプト作成時のエディタ見出し。"
+  },
+  "editTitle": {
+    "message": "スクリプトを編集",
+    "description": "既存スクリプト編集時のエディタ見出し。"
+  },
+  "save": {
+    "message": "保存",
+    "description": "検証してスクリプトを保存するボタン。"
+  },
+  "cancel": {
+    "message": "キャンセル",
+    "description": "変更を破棄して一覧に戻るボタン。"
+  },
+  "invalidJson": {
+    "message": "JSON の解析に失敗：",
+    "description": "JSON パースエラーメッセージの接頭辞。"
+  },
+  "stepError": {
+    "message": "ステップ $STEP$：$REASON$",
+    "placeholders": {
+      "step": { "content": "$1" },
+      "reason": { "content": "$2" }
+    },
+    "description": "特定のステップを指す検証エラー。$STEP$ は 1 起点 のステップ番号、$REASON$ は理由。"
+  },
+  "runTitle": {
+    "message": "実行",
+    "description": "実行ビュー見出しの接頭辞。スクリプト名が続く。"
+  },
+  "runningStatus": {
+    "message": "実行中…",
+    "description": "スクリプト実行中のステータス行。"
+  },
+  "runSuccess": {
+    "message": "✅ 成功",
+    "description": "スクリプトが最後まで成功したときの最終ステータス。"
+  },
+  "runFailed": {
+    "message": "❌ 失敗",
+    "description": "スクリプトが失敗したときの最終ステータス。"
+  },
+  "runAborted": {
+    "message": "停止しました",
+    "description": "ユーザーが停止したときの最終ステータス。"
+  },
+  "stopBtn": {
+    "message": "停止",
+    "description": "実行中のスクリプトを中止するボタン。"
+  },
+  "backToList": {
+    "message": "一覧に戻る",
+    "description": "実行ビューから一覧へ戻るボタン。"
+  },
+  "statusPending": {
+    "message": "待機中",
+    "description": "未実行ステップのバッジ。"
+  },
+  "statusRunning": {
+    "message": "実行中",
+    "description": "実行中ステップのバッジ。"
+  },
+  "statusOk": {
+    "message": "成功",
+    "description": "成功したステップのバッジ。"
+  },
+  "statusSkipped": {
+    "message": "スキップ",
+    "description": "失敗時にスキップされた任意ステップのバッジ。"
+  },
+  "statusFailed": {
+    "message": "失敗",
+    "description": "失敗したステップのバッジ。"
+  },
+  "lastRunLabel": {
+    "message": "前回：",
+    "description": "一覧の前回実行サマリーの接頭辞。"
+  },
+  "neverRun": {
+    "message": "未実行",
+    "description": "一度も実行されていないスクリプトの説明。"
+  },
+  "stepsUnit": {
+    "message": "ステップ",
+    "description": "ステップ数の単位（例：「5 ステップ」）。"
+  },
+  "alreadyRunning": {
+    "message": "すでにスクリプトが実行中です",
+    "description": "2 つ目の実行を開始しようとしたときの表示。"
+  },
+  "runFailedToStart": {
+    "message": "開始できません：バックグラウンドが利用できません。拡張機能を再読み込みしてください。",
+    "description": "バックグラウンド service worker が切断されたときの表示。"
+  },
+  "errNotArray": {
+    "message": "スクリプトはステップの配列である必要があります",
+    "description": "検証エラー：JSON のルートが配列ではない。"
+  },
+  "errEmpty": {
+    "message": "ステップが 1 つ以上必要です",
+    "description": "検証エラー：ステップ配列が空。"
+  },
+  "errTooMany": {
+    "message": "ステップ数が上限（100）を超えています",
+    "description": "検証エラー：ステップ数が上限超過。"
+  },
+  "errStepObject": {
+    "message": "ステップはオブジェクトである必要があります",
+    "description": "検証エラー：ステップがオブジェクトではない。"
+  },
+  "errStepName": {
+    "message": "name に空文字列は指定できません",
+    "description": "検証エラー：ステップ名が空文字列。"
+  },
+  "errUnknownAction": {
+    "message": "不明なアクション：$ACTION$",
+    "placeholders": {
+      "action": { "content": "$1" }
+    },
+    "description": "検証エラー：アクション名が組み込みの一覧にない。$ACTION$ は入力値。"
+  },
+  "errSelectorRequired": {
+    "message": "selector は必須です",
+    "description": "検証エラー：CSS セレクターが不足。"
+  },
+  "errUrlRequired": {
+    "message": "url は http(s) リンクである必要があります",
+    "description": "検証エラー：open ステップの url が未指定かスキーム不正。"
+  },
+  "errValueRequired": {
+    "message": "文字列の値が必要です",
+    "description": "検証エラー：必須の文字列パラメータが不足。"
+  },
+  "errMissing": {
+    "message": "パラメータが不足しています",
+    "description": "検証エラー：必須の数値パラメータが未指定。フィールド名はコード側で連結。"
+  },
+  "errKeyRequired": {
+    "message": "key は必須です（例：Enter/Esc/Tab）",
+    "description": "検証エラー：press ステップのキー名が不足。"
+  },
+  "errToInvalid": {
+    "message": "to は top/bottom/selector/y のいずれかです",
+    "description": "検証エラー：スクロール先が不正。"
+  },
+  "errScrollSelector": {
+    "message": "to が selector のときは selector が必要です",
+    "description": "検証エラー：要素へのスクロールでセレクターが未指定。"
+  },
+  "errBehavior": {
+    "message": "behavior は auto/smooth/instant のいずれかです",
+    "description": "検証エラー：スクロールの挙動指定が不正。"
+  },
+  "errNotBoolean": {
+    "message": "true/false を指定してください",
+    "description": "検証エラー：真偽パラメータに他の型が指定された。"
+  },
+  "errNumRange": {
+    "message": "数値が範囲外です",
+    "description": "数値パラメータが範囲外のときの検証エラー。フィールド名と範囲はコード側で連結。"
+  }
+}

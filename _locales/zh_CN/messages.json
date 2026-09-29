@@ -1,0 +1,213 @@
+{
+  "extName": {
+    "message": "Hamster Punch",
+    "description": "扩展名称。"
+  },
+  "extDescription": {
+    "message": "你的小仓鼠助手，帮你在浏览器里记录每日签到。",
+    "description": "扩展描述，显示在 Chrome 应用商店和扩展管理页。"
+  },
+  "actionTitle": {
+    "message": "打开 Hamster Punch",
+    "description": "工具栏图标的提示文字。"
+  },
+  "scriptsTitle": {
+    "message": "签到脚本",
+    "description": "脚本列表视图的标题。"
+  },
+  "newScript": {
+    "message": "＋ 新建脚本",
+    "description": "打开编辑器新建脚本的按钮。"
+  },
+  "emptyScripts": {
+    "message": "还没有脚本，点「新建脚本」写一个吧。",
+    "description": "脚本列表为空时的占位提示。"
+  },
+  "runBtn": {
+    "message": "运行",
+    "description": "运行脚本的按钮。"
+  },
+  "editBtn": {
+    "message": "编辑",
+    "description": "在编辑器中打开脚本的按钮。"
+  },
+  "deleteBtn": {
+    "message": "删除",
+    "description": "删除脚本的按钮。"
+  },
+  "confirmDelete": {
+    "message": "确定删除该脚本？",
+    "description": "删除脚本前的确认提示。"
+  },
+  "namePlaceholder": {
+    "message": "脚本名称",
+    "description": "编辑器中脚本名称输入框的占位文字。"
+  },
+  "untitled": {
+    "message": "未命名脚本",
+    "description": "名称留空时使用的默认脚本名。"
+  },
+  "newTitle": {
+    "message": "新建脚本",
+    "description": "新建脚本时编辑器的标题。"
+  },
+  "editTitle": {
+    "message": "编辑脚本",
+    "description": "编辑已有脚本时编辑器的标题。"
+  },
+  "save": {
+    "message": "保存",
+    "description": "校验并保存脚本的按钮。"
+  },
+  "cancel": {
+    "message": "取消",
+    "description": "放弃修改并返回列表的按钮。"
+  },
+  "invalidJson": {
+    "message": "JSON 解析失败：",
+    "description": "JSON 解析错误信息的前缀。"
+  },
+  "stepError": {
+    "message": "第 $STEP$ 步：$REASON$",
+    "placeholders": {
+      "step": { "content": "$1" },
+      "reason": { "content": "$2" }
+    },
+    "description": "定位到具体步骤的校验错误；$STEP$ 是从 1 开始的步骤序号，$REASON$ 是原因。"
+  },
+  "runTitle": {
+    "message": "运行",
+    "description": "运行视图标题的前缀，后面跟脚本名。"
+  },
+  "runningStatus": {
+    "message": "运行中…",
+    "description": "脚本运行中的状态文字。"
+  },
+  "runSuccess": {
+    "message": "✅ 运行成功",
+    "description": "脚本全部执行成功的最终状态。"
+  },
+  "runFailed": {
+    "message": "❌ 运行失败",
+    "description": "脚本执行失败的最终状态。"
+  },
+  "runAborted": {
+    "message": "已中止",
+    "description": "脚本被用户手动停止后的最终状态。"
+  },
+  "stopBtn": {
+    "message": "停止",
+    "description": "中止当前运行的按钮。"
+  },
+  "backToList": {
+    "message": "返回列表",
+    "description": "从运行视图返回脚本列表的按钮。"
+  },
+  "statusPending": {
+    "message": "待执行",
+    "description": "尚未执行的步骤徽标。"
+  },
+  "statusRunning": {
+    "message": "运行中",
+    "description": "正在执行的步骤徽标。"
+  },
+  "statusOk": {
+    "message": "成功",
+    "description": "执行成功的步骤徽标。"
+  },
+  "statusSkipped": {
+    "message": "已跳过",
+    "description": "可选步骤失败后跳过的徽标。"
+  },
+  "statusFailed": {
+    "message": "失败",
+    "description": "执行失败的步骤徽标。"
+  },
+  "lastRunLabel": {
+    "message": "上次：",
+    "description": "列表中最近一次运行摘要的前缀。"
+  },
+  "neverRun": {
+    "message": "尚未运行",
+    "description": "从未运行过的脚本在列表中的说明。"
+  },
+  "stepsUnit": {
+    "message": "个步骤",
+    "description": "步骤数量的单位，如「5 个步骤」。"
+  },
+  "alreadyRunning": {
+    "message": "已有脚本正在运行",
+    "description": "尝试同时运行第二个脚本时的提示。"
+  },
+  "runFailedToStart": {
+    "message": "无法启动运行：后台不可用，请重新加载扩展后重试。",
+    "description": "后台 service worker 断开连接时的提示。"
+  },
+  "errNotArray": {
+    "message": "脚本必须是一个步骤数组",
+    "description": "校验错误：JSON 根不是数组。"
+  },
+  "errEmpty": {
+    "message": "脚本至少需要一个步骤",
+    "description": "校验错误：步骤数组为空。"
+  },
+  "errTooMany": {
+    "message": "步骤数量超过上限（100）",
+    "description": "校验错误：步骤数量超出上限。"
+  },
+  "errStepObject": {
+    "message": "步骤必须是对象",
+    "description": "校验错误：某个步骤不是普通对象。"
+  },
+  "errStepName": {
+    "message": "name 不能为空字符串",
+    "description": "校验错误：步骤名称是空字符串。"
+  },
+  "errUnknownAction": {
+    "message": "未知动作：$ACTION$",
+    "placeholders": {
+      "action": { "content": "$1" }
+    },
+    "description": "校验错误：动作名不在内置动作之列；$ACTION$ 是填入的值。"
+  },
+  "errSelectorRequired": {
+    "message": "缺少 selector",
+    "description": "校验错误：缺少 CSS 选择器。"
+  },
+  "errUrlRequired": {
+    "message": "url 必须是 http(s) 链接",
+    "description": "校验错误：open 步骤的 url 缺失或协议不对。"
+  },
+  "errValueRequired": {
+    "message": "需要提供字符串值",
+    "description": "校验错误：缺少必需的字符串参数。"
+  },
+  "errMissing": {
+    "message": "缺少参数",
+    "description": "校验错误：缺少必需的数值参数；字段名由代码拼接在前。"
+  },
+  "errKeyRequired": {
+    "message": "缺少 key（如 Enter/Esc/Tab）",
+    "description": "校验错误：press 步骤缺少按键名。"
+  },
+  "errToInvalid": {
+    "message": "to 必须是 top/bottom/selector/y",
+    "description": "校验错误：滚动目标不合法。"
+  },
+  "errScrollSelector": {
+    "message": "to 为 selector 时必须提供 selector",
+    "description": "校验错误：滚动到指定元素但没给选择器。"
+  },
+  "errBehavior": {
+    "message": "behavior 必须是 auto/smooth/instant",
+    "description": "校验错误：滚动方式不合法。"
+  },
+  "errNotBoolean": {
+    "message": "必须是 true/false",
+    "description": "校验错误：布尔参数填了其他类型。"
+  },
+  "errNumRange": {
+    "message": "数值超出允许范围",
+    "description": "数值参数超范围的校验错误；字段名和允许范围由代码拼接在后。"
+  }
+}

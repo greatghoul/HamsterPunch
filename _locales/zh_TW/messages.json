@@ -1,0 +1,213 @@
+{
+  "extName": {
+    "message": "Hamster Punch",
+    "description": "擴充功能名稱。"
+  },
+  "extDescription": {
+    "message": "你的小倉鼠助手，幫你在瀏覽器裡記錄每日簽到。",
+    "description": "擴充功能說明，顯示於 Chrome 線上應用程式商店與擴充功能管理頁。"
+  },
+  "actionTitle": {
+    "message": "開啟 Hamster Punch",
+    "description": "工具列圖示的提示文字。"
+  },
+  "scriptsTitle": {
+    "message": "簽到腳本",
+    "description": "腳本清單檢視的標題。"
+  },
+  "newScript": {
+    "message": "＋ 新增腳本",
+    "description": "開啟編輯器以新增腳本的按鈕。"
+  },
+  "emptyScripts": {
+    "message": "還沒有腳本，點「新增腳本」寫一個吧。",
+    "description": "腳本清單為空時的佔位提示。"
+  },
+  "runBtn": {
+    "message": "執行",
+    "description": "執行腳本的按鈕。"
+  },
+  "editBtn": {
+    "message": "編輯",
+    "description": "在編輯器中開啟腳本的按鈕。"
+  },
+  "deleteBtn": {
+    "message": "刪除",
+    "description": "刪除腳本的按鈕。"
+  },
+  "confirmDelete": {
+    "message": "確定要刪除這個腳本？",
+    "description": "刪除腳本前的確認提示。"
+  },
+  "namePlaceholder": {
+    "message": "腳本名稱",
+    "description": "編輯器中腳本名稱輸入框的佔位文字。"
+  },
+  "untitled": {
+    "message": "未命名腳本",
+    "description": "名稱留空時使用的預設腳本名。"
+  },
+  "newTitle": {
+    "message": "新增腳本",
+    "description": "新增腳本時編輯器的標題。"
+  },
+  "editTitle": {
+    "message": "編輯腳本",
+    "description": "編輯既有腳本時編輯器的標題。"
+  },
+  "save": {
+    "message": "儲存",
+    "description": "驗證並儲存腳本的按鈕。"
+  },
+  "cancel": {
+    "message": "取消",
+    "description": "放棄修改並返回清單的按鈕。"
+  },
+  "invalidJson": {
+    "message": "JSON 解析失敗：",
+    "description": "JSON 解析錯誤訊息的前綴。"
+  },
+  "stepError": {
+    "message": "第 $STEP$ 步：$REASON$",
+    "placeholders": {
+      "step": { "content": "$1" },
+      "reason": { "content": "$2" }
+    },
+    "description": "定位到特定步驟的驗證錯誤；$STEP$ 是從 1 開始的步驟序號，$REASON$ 是原因。"
+  },
+  "runTitle": {
+    "message": "執行",
+    "description": "執行檢視標題的前綴，後面接腳本名稱。"
+  },
+  "runningStatus": {
+    "message": "執行中…",
+    "description": "腳本執行中的狀態文字。"
+  },
+  "runSuccess": {
+    "message": "✅ 執行成功",
+    "description": "腳本全部執行成功的最終狀態。"
+  },
+  "runFailed": {
+    "message": "❌ 執行失敗",
+    "description": "腳本執行失敗的最終狀態。"
+  },
+  "runAborted": {
+    "message": "已中止",
+    "description": "腳本被使用者手動停止後的最終狀態。"
+  },
+  "stopBtn": {
+    "message": "停止",
+    "description": "中止目前執行的按鈕。"
+  },
+  "backToList": {
+    "message": "返回清單",
+    "description": "從執行檢視返回腳本清單的按鈕。"
+  },
+  "statusPending": {
+    "message": "待執行",
+    "description": "尚未執行的步驟徽章。"
+  },
+  "statusRunning": {
+    "message": "執行中",
+    "description": "正在執行的步驟徽章。"
+  },
+  "statusOk": {
+    "message": "成功",
+    "description": "執行成功的步驟徽章。"
+  },
+  "statusSkipped": {
+    "message": "已跳過",
+    "description": "可選步驟失敗後跳過的徽章。"
+  },
+  "statusFailed": {
+    "message": "失敗",
+    "description": "執行失敗的步驟徽章。"
+  },
+  "lastRunLabel": {
+    "message": "上次：",
+    "description": "清單中最近一次執行摘要的前綴。"
+  },
+  "neverRun": {
+    "message": "尚未執行",
+    "description": "從未執行過的腳本在清單中的說明。"
+  },
+  "stepsUnit": {
+    "message": "個步驟",
+    "description": "步驟數量的單位，如「5 個步驟」。"
+  },
+  "alreadyRunning": {
+    "message": "已有腳本正在執行",
+    "description": "嘗試同時執行第二個腳本時的提示。"
+  },
+  "runFailedToStart": {
+    "message": "無法啟動執行：背景頁不可用，請重新載入擴充功能後再試。",
+    "description": "背景 service worker 斷線時的提示。"
+  },
+  "errNotArray": {
+    "message": "腳本必須是一個步驟陣列",
+    "description": "驗證錯誤：JSON 根不是陣列。"
+  },
+  "errEmpty": {
+    "message": "腳本至少需要一個步驟",
+    "description": "驗證錯誤：步驟陣列為空。"
+  },
+  "errTooMany": {
+    "message": "步驟數量超過上限（100）",
+    "description": "驗證錯誤：步驟數量超出上限。"
+  },
+  "errStepObject": {
+    "message": "步驟必須是物件",
+    "description": "驗證錯誤：某個步驟不是普通物件。"
+  },
+  "errStepName": {
+    "message": "name 不能是空字串",
+    "description": "驗證錯誤：步驟名稱是空字串。"
+  },
+  "errUnknownAction": {
+    "message": "未知動作：$ACTION$",
+    "placeholders": {
+      "action": { "content": "$1" }
+    },
+    "description": "驗證錯誤：動作名稱不在內建動作之列；$ACTION$ 是填入的值。"
+  },
+  "errSelectorRequired": {
+    "message": "缺少 selector",
+    "description": "驗證錯誤：缺少 CSS 選擇器。"
+  },
+  "errUrlRequired": {
+    "message": "url 必須是 http(s) 連結",
+    "description": "驗證錯誤：open 步驟的 url 缺失或協議不對。"
+  },
+  "errValueRequired": {
+    "message": "需要提供字串值",
+    "description": "驗證錯誤：缺少必需的字串參數。"
+  },
+  "errMissing": {
+    "message": "缺少參數",
+    "description": "驗證錯誤：缺少必需的數值參數；欄位名稱由程式拼接在前。"
+  },
+  "errKeyRequired": {
+    "message": "缺少 key（如 Enter/Esc/Tab）",
+    "description": "驗證錯誤：press 步驟缺少按鍵名稱。"
+  },
+  "errToInvalid": {
+    "message": "to 必須是 top/bottom/selector/y",
+    "description": "驗證錯誤：捲動目標不合法。"
+  },
+  "errScrollSelector": {
+    "message": "to 為 selector 時必須提供 selector",
+    "description": "驗證錯誤：捲動到指定元素但沒給選擇器。"
+  },
+  "errBehavior": {
+    "message": "behavior 必須是 auto/smooth/instant",
+    "description": "驗證錯誤：捲動方式不合法。"
+  },
+  "errNotBoolean": {
+    "message": "必須是 true/false",
+    "description": "驗證錯誤：布林參數填了其他型別。"
+  },
+  "errNumRange": {
+    "message": "數值超出允許範圍",
+    "description": "數值參數超範圍的驗證錯誤；欄位名稱與允許範圍由程式拼接在後。"
+  }
+}

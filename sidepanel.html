@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hamster Punch</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <!-- 脚本列表（主视图） -->
+      <div id="scripts-list">
+        <div class="scripts-header">
+          <h2 id="scriptsTitle" class="section-title"></h2>
+          <button id="newScript" class="btn btn-primary" type="button"></button>
+        </div>
+        <ul id="scriptItems" class="script-items"></ul>
+        <p id="scriptsEmpty" class="empty hidden"></p>
+      </div>
+
+      <!-- 脚本编辑 -->
+      <div id="script-editor" class="hidden">
+        <h2 id="editorTitle" class="section-title"></h2>
+        <input id="scriptName" class="input" type="text" />
+        <textarea id="scriptJson" class="json-editor" spellcheck="false"></textarea>
+        <p id="editorError" class="error hidden"></p>
+        <div class="btn-row">
+          <button id="saveScript" class="btn btn-primary" type="button"></button>
+          <button id="cancelEdit" class="btn" type="button"></button>
+        </div>
+      </div>
+
+      <!-- 运行视图 -->
+      <div id="script-run" class="hidden">
+        <h2 id="runTitle" class="section-title"></h2>
+        <p id="runStatus" class="run-status"></p>
+        <ol id="runSteps" class="run-steps"></ol>
+        <div id="runLogs" class="run-logs hidden"></div>
+        <div class="btn-row">
+          <button id="stopRun" class="btn btn-danger hidden" type="button"></button>
+          <button id="backToList" class="btn hidden" type="button"></button>
+        </div>
+      </div>
+    </main>
+
+    <script src="lib/db.js"></script>
+    <script src="scripts-ui.js"></script>
+  </body>
+</html>

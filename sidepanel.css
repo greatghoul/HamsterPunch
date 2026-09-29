@@ -1,0 +1,354 @@
+:root {
+  --bg: #fff7ed;
+  --fg: #3f2d1d;
+  --muted: #8a7361;
+  --accent: #f59e0b;
+  --accent-dark: #b45309;
+  --card: #ffffff;
+  --border: rgba(63, 45, 29, 0.15);
+  --ok: #15803d;
+  --warn: #b45309;
+  --danger: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f1a16;
+    --fg: #f5ece1;
+    --muted: #b3a294;
+    --accent: #fbbf24;
+    --accent-dark: #fcd34d;
+    --card: #2b241e;
+    --border: rgba(245, 236, 225, 0.18);
+    --ok: #4ade80;
+    --warn: #fcd34d;
+    --danger: #f87171;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Segoe UI", "PingFang SC", "Hiragino Sans", "Noto Sans KR",
+    system-ui, sans-serif;
+}
+
+.panel {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+/* ---------- 顶部 Tab ---------- */
+
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--fg);
+}
+
+.tab.active {
+  background: var(--card);
+  color: var(--accent-dark);
+  border-color: var(--border);
+}
+
+/* ---------- 通用组件 ---------- */
+
+.hidden {
+  display: none !important;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.btn {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--fg);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--bg);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #3f2d1d;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.btn-danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-row .btn {
+  flex: 1;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--fg);
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.input:focus,
+.json-editor:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* 编辑视图：代码框充满剩余高度，按钮自然贴底 */
+#script-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.json-editor {
+  flex: 1;
+  min-height: 220px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--fg);
+  font-family: ui-monospace, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  resize: none;
+}
+
+.error {
+  margin: 8px 0 0;
+  color: var(--danger);
+  font-size: 12px;
+  text-align: left;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.empty {
+  margin: 24px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- 脚本列表 ---------- */
+
+.scripts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.scripts-header .section-title {
+  margin: 0;
+}
+
+.script-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.script-item {
+  margin-bottom: 8px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  text-align: left;
+}
+
+.script-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.script-item-meta {
+  margin: 4px 0 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.script-item-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.script-item-actions .btn {
+  flex: 1;
+}
+
+/* ---------- 运行视图 ---------- */
+
+.run-status {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+  word-break: break-all;
+}
+
+.run-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.run-step {
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.run-step-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.run-step-name {
+  font-size: 13px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.run-step-detail {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-pending {
+  background: rgba(138, 115, 97, 0.15);
+  color: var(--muted);
+}
+
+.badge-running {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-dark);
+}
+
+.badge-ok {
+  background: rgba(34, 197, 94, 0.16);
+  color: var(--ok);
+}
+
+.badge-skipped {
+  background: rgba(234, 179, 8, 0.16);
+  color: var(--warn);
+}
+
+.badge-failed {
+  background: rgba(239, 68, 68, 0.16);
+  color: var(--danger);
+}
+
+.run-logs {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  max-height: 140px;
+  overflow-y: auto;
+  font-family: ui-monospace, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.run-logs p {
+  margin: 0;
+}

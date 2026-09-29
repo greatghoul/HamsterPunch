@@ -1,0 +1,213 @@
+{
+  "extName": {
+    "message": "Hamster Punch",
+    "description": "Extension name."
+  },
+  "extDescription": {
+    "message": "Your little hamster assistant for tracking daily sign-ins in the browser.",
+    "description": "Extension description shown in the Chrome Web Store and on the extensions page."
+  },
+  "actionTitle": {
+    "message": "Open Hamster Punch",
+    "description": "Tooltip of the toolbar icon."
+  },
+  "scriptsTitle": {
+    "message": "Check-in Scripts",
+    "description": "Heading of the script list view."
+  },
+  "newScript": {
+    "message": "+ New script",
+    "description": "Button that opens the editor for a new script."
+  },
+  "emptyScripts": {
+    "message": "No scripts yet. Create one to get started.",
+    "description": "Placeholder shown when the script list is empty."
+  },
+  "runBtn": {
+    "message": "Run",
+    "description": "Button that runs a script."
+  },
+  "editBtn": {
+    "message": "Edit",
+    "description": "Button that opens a script in the editor."
+  },
+  "deleteBtn": {
+    "message": "Delete",
+    "description": "Button that deletes a script."
+  },
+  "confirmDelete": {
+    "message": "Delete this script?",
+    "description": "Confirmation dialog when deleting a script."
+  },
+  "namePlaceholder": {
+    "message": "Script name",
+    "description": "Placeholder of the script name input in the editor."
+  },
+  "untitled": {
+    "message": "Untitled script",
+    "description": "Fallback script name when the name input is empty."
+  },
+  "newTitle": {
+    "message": "New Script",
+    "description": "Heading of the editor when creating a script."
+  },
+  "editTitle": {
+    "message": "Edit Script",
+    "description": "Heading of the editor when editing a script."
+  },
+  "save": {
+    "message": "Save",
+    "description": "Button that validates and saves the script."
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Button that leaves the editor without saving."
+  },
+  "invalidJson": {
+    "message": "Invalid JSON: ",
+    "description": "Prefix before the JSON parser error message."
+  },
+  "stepError": {
+    "message": "Step $STEP$: $REASON$",
+    "placeholders": {
+      "step": { "content": "$1" },
+      "reason": { "content": "$2" }
+    },
+    "description": "Validation error located at a specific step; $STEP$ is the 1-based step number and $REASON$ the reason."
+  },
+  "runTitle": {
+    "message": "Run",
+    "description": "Prefix of the run view heading, followed by the script name."
+  },
+  "runningStatus": {
+    "message": "Running…",
+    "description": "Status line while a script is running."
+  },
+  "runSuccess": {
+    "message": "✅ Success",
+    "description": "Final status when the script finished successfully."
+  },
+  "runFailed": {
+    "message": "❌ Failed",
+    "description": "Final status when the script failed."
+  },
+  "runAborted": {
+    "message": "Stopped",
+    "description": "Final status when the script was stopped by the user."
+  },
+  "stopBtn": {
+    "message": "Stop",
+    "description": "Button that aborts the current run."
+  },
+  "backToList": {
+    "message": "Back",
+    "description": "Button that returns from the run view to the list."
+  },
+  "statusPending": {
+    "message": "Pending",
+    "description": "Badge for a step that has not run yet."
+  },
+  "statusRunning": {
+    "message": "Running",
+    "description": "Badge for the step currently executing."
+  },
+  "statusOk": {
+    "message": "OK",
+    "description": "Badge for a step that succeeded."
+  },
+  "statusSkipped": {
+    "message": "Skipped",
+    "description": "Badge for an optional step that failed and was skipped."
+  },
+  "statusFailed": {
+    "message": "Failed",
+    "description": "Badge for a step that failed."
+  },
+  "lastRunLabel": {
+    "message": "Last: ",
+    "description": "Prefix before the last run summary in the list."
+  },
+  "neverRun": {
+    "message": "Never run",
+    "description": "List meta for a script that has never been run."
+  },
+  "stepsUnit": {
+    "message": "steps",
+    "description": "Unit after the step count, e.g. \"5 steps\"."
+  },
+  "alreadyRunning": {
+    "message": "A script is already running",
+    "description": "Shown when trying to start a second run."
+  },
+  "runFailedToStart": {
+    "message": "Could not start: the background is unavailable. Try reloading the extension.",
+    "description": "Shown when the background service worker dropped the connection."
+  },
+  "errNotArray": {
+    "message": "Script must be an array of steps",
+    "description": "Validation error: the JSON root is not an array."
+  },
+  "errEmpty": {
+    "message": "At least one step is required",
+    "description": "Validation error: the step array is empty."
+  },
+  "errTooMany": {
+    "message": "Too many steps (max 100)",
+    "description": "Validation error: the step array exceeds the limit."
+  },
+  "errStepObject": {
+    "message": "Step must be an object",
+    "description": "Validation error: a step is not a plain object."
+  },
+  "errStepName": {
+    "message": "name cannot be an empty string",
+    "description": "Validation error: step name is empty."
+  },
+  "errUnknownAction": {
+    "message": "Unknown action: $ACTION$",
+    "placeholders": {
+      "action": { "content": "$1" }
+    },
+    "description": "Validation error: the action name is not one of the built-ins; $ACTION$ is the given value."
+  },
+  "errSelectorRequired": {
+    "message": "selector is required",
+    "description": "Validation error: missing CSS selector."
+  },
+  "errUrlRequired": {
+    "message": "url must be an http(s) link",
+    "description": "Validation error: open step URL missing or wrong scheme."
+  },
+  "errValueRequired": {
+    "message": "a string value is required",
+    "description": "Validation error: a required string parameter is missing."
+  },
+  "errMissing": {
+    "message": "missing parameter",
+    "description": "Validation error: a required numeric parameter is absent; the field name is prepended in code."
+  },
+  "errKeyRequired": {
+    "message": "key is required (e.g. Enter/Esc/Tab)",
+    "description": "Validation error: press step key missing."
+  },
+  "errToInvalid": {
+    "message": "to must be top/bottom/selector/y",
+    "description": "Validation error: scroll target invalid."
+  },
+  "errScrollSelector": {
+    "message": "selector is required when to is \"selector\"",
+    "description": "Validation error: scroll to selector without selector."
+  },
+  "errBehavior": {
+    "message": "behavior must be auto/smooth/instant",
+    "description": "Validation error: scroll behavior invalid."
+  },
+  "errNotBoolean": {
+    "message": "must be true/false",
+    "description": "Validation error: a boolean parameter has another type."
+  },
+  "errNumRange": {
+    "message": "number out of range",
+    "description": "Validation error prefix for a numeric parameter out of range; the field name and allowed range are appended in code."
+  }
+}
