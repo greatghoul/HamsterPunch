@@ -67,12 +67,22 @@ const HamsterExecutor = (() => {
 
   // 以下函数体会被序列化进页面执行，必须自包含，不能引用外部变量。
 
-  function pageQuery(selector) {
+  /**
+   * 查询元素：文本条件在页面内对完整文本判断，只回传判定结果与一小段摘要。
+   * 注意不能先截断再匹配——body 这类大范围选择器的文本几乎必然超过摘要长度，
+   * 先 slice 会让 textContains 永远匹配不到。连续空白（源码里的换行/缩进）折叠成
+   * 单个空格，让被换行打断的句子（如 “ 已签到，获得\n  1 颗瓜子 ”）仍能匹配。
+   * 注意：文字被标签拆到不同元素时（<span>已</span><span>签到</span>），textContent
+   * 会得到 “已 签到”，这种拆字仍匹配不上，需要选择更内层的 selector。
+   */
+  function pageQuery(selector, textContains) {
     const el = document.querySelector(selector);
     if (!el) return null;
+    const full = (el.textContent || "").replace(/\s+/g, " ").trim();
     return {
       tag: el.tagName.toLowerCase(),
-      text: (el.textContent || "").trim().slice(0, 200),
+      text: full.slice(0, 200),
+      hasText: !textContains || full.includes(textContains),
     };
   }
 
@@ -190,7 +200,7 @@ const HamsterExecutor = (() => {
       if (state.stopRequested) throw new StopError();
       let info = null;
       try {
-        info = await inject(state.tabId, pageQuery, [selector]);
+        info = await inject(state.tabId, pageQuery, [selector, textContains || null]);
         consecutiveFails = 0;
       } catch (error) {
         if (error instanceof StopError) throw error;
@@ -198,12 +208,12 @@ const HamsterExecutor = (() => {
         if (consecutiveFails >= INJECT_FAIL_LIMIT) throw error;
         /* 偶发注入失败不算超时，继续轮询到 deadline 为止 */
       }
-      if (info && (!textContains || (info.text || "").includes(textContains))) return info;
+      if (info && (!textContains || info.hasText)) return info;
       if (Date.now() >= deadline) {
+        // 区分“元素没出现”和“元素在但文字不对”，后者把实际文本带出来便于排查
+        if (!info) throw new Error(`timeout waiting for element ${selector} (${timeout}ms)`);
         throw new Error(
-          textContains
-            ? `element ${selector} not found or missing text "${textContains}"`
-            : `timeout waiting for element ${selector} (${timeout}ms)`
+          `element ${selector} found but its text does not contain "${textContains}"; actual: "${info.text.slice(0, 80)}"`
         );
       }
       await sleep(Math.min(interval, Math.max(1, deadline - Date.now())));
@@ -303,7 +313,9 @@ const HamsterExecutor = (() => {
         300,
         step.textContains
       );
-      return step.textContains ? `assert ok: "${info.text.slice(0, 60)}"` : `assert ok: <${info.tag}>`;
+      return step.textContains
+        ? `assert ok: <${info.tag}> contains "${step.textContains}"`
+        : `assert ok: <${info.tag}>`;
     },
 
     async extract(step, state) {
