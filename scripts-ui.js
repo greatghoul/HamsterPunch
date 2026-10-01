@@ -122,7 +122,7 @@ function validateSteps(raw) {
           if (typeof step.value !== "string") fail(index, msg("errValueRequired", "缺少 value（字符串）"));
           out.value = step.value;
         }
-        if (step.action === "assert" && step.textContains !== undefined) {
+        if (["waitForElement", "click", "assert"].includes(step.action) && step.textContains !== undefined) {
           if (typeof step.textContains !== "string") fail(index, msg("errValueRequired", "textContains 必须是字符串"));
           out.textContains = step.textContains;
         }

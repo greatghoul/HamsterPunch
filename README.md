@@ -73,9 +73,9 @@ icons/                 # 16 / 32 / 48 / 128 图标（由脚本生成）
 | action | 必填 | 可选 | 说明 |
 | --- | --- | --- | --- |
 | `open` | `url` | `newTab`（默认 true）、`active`（默认 false，仅 newTab）、`loadTimeout`（默认 20000） | 默认打开新标签页（后台）并成为后续步骤的目标；`newTab: false` 在当前目标标签页内导航 |
-| `waitForElement` | `selector` | `timeout`（默认 10000）、`interval`（默认 500） | 轮询等待元素出现 |
+| `waitForElement` | `selector` | `textContains`、`timeout`（默认 10000）、`interval`（默认 500） | 轮询等待元素出现（指定 `textContains` 时要求文本命中） |
 | `wait` | `ms`（0–300000） | | 固定等待 |
-| `click` | `selector` | `index`（默认 0）、`timeout`（默认 10000） | 先等元素出现，再派发点击 |
+| `click` | `selector` | `textContains`、`index`（默认 0）、`timeout`（默认 10000） | 先等元素出现，再派发点击 |
 | `input` | `selector`、`value` | `timeout` | 填写输入框，派发 `input` / `change` 事件（兼容 React 受控组件） |
 | `press` | `key`（如 `Enter`） | `selector` | 对指定元素（或当前焦点元素）派发按键事件 |
 | `scroll` | `to`：`top` / `bottom` / `selector` / `y` | `selector`、`y`、`behavior` | 滚动页面 |
@@ -83,13 +83,14 @@ icons/                 # 16 / 32 / 48 / 128 图标（由脚本生成）
 | `extract` | — | `selector`（缺省取页面标题）、`attr`、`label` | 提取文本/属性值，写入运行日志 |
 | `close` | — | | 关闭当前目标标签页（脚本结束的收尾动作） |
 
-关于 `assert` + `textContains` 的匹配规则：
+关于 `textContains`（`waitForElement` / `click` / `assert` 均支持）的匹配规则：
 
+- 定位方式：先用 `selector` 取元素集合，再从中取第一个文本包含 `textContains` 的元素；`click` 的 `index` 是在**满足文本条件的子集**里再取第 `index` 个（默认 0 即第一个）；
 - 匹配的是**元素完整文本**（对 `body` 这样的大范围选择器也一样），不受日志/摘要长度限制；
 - 文本里的连续空白（源码换行、缩进）会先折叠成单个空格，所以 `已签到，获得\n  1 颗瓜子` 可以用 `"已签到，获得 1 颗瓜子"` 命中；
 - 文字被标签拆到不同元素时（`<span>已</span><span>签到</span>`）拿到的是 `"已 签到"`，这种拆字匹配不上，请改成更内层的 `selector`；
-- 未命中不会立刻失败，而是轮询到 `timeout`（默认 5 秒）才报错；想让它只查一次就判定，把 `timeout` 设为 `0`；
-- 报错会区分「元素没出现」和「元素在但文字不对」，后者会带上实际抓到的文本片段，方便定位。
+- 未命中不会立刻失败，而是轮询到 `timeout`（`assert` 默认 5 秒，`waitForElement`/`click` 默认 10 秒）才报错；想让它只查一次就判定，把 `timeout` 设为 `0`；
+- 报错会说明集合共多少个元素、其中多少个文本命中、`index` 是否越界，并带上第一个元素的实际文本，方便定位。
 
 ### 执行模型与权限
 

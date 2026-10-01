@@ -68,29 +68,46 @@ const HamsterExecutor = (() => {
   // 以下函数体会被序列化进页面执行，必须自包含，不能引用外部变量。
 
   /**
-   * 查询元素：文本条件在页面内对完整文本判断，只回传判定结果与一小段摘要。
-   * 注意不能先截断再匹配——body 这类大范围选择器的文本几乎必然超过摘要长度，
-   * 先 slice 会让 textContains 永远匹配不到。连续空白（源码里的换行/缩进）折叠成
-   * 单个空格，让被换行打断的句子（如 “ 已签到，获得\n  1 颗瓜子 ”）仍能匹配。
-   * 注意：文字被标签拆到不同元素时（<span>已</span><span>签到</span>），textContent
-   * 会得到 “已 签到”，这种拆字仍匹配不上，需要选择更内层的 selector。
+   * 查询元素：先用 selector 取集合，命中文本条件的第 index 个即命中。
+   * 文本条件在页面内对完整文本判断，只回传判定结果与一小段摘要——不能先截断再匹配，
+   * body 这类大范围选择器的文本几乎必然超过摘要长度，先 slice 会让 textContains 永远匹配不到。
+   * 连续空白（源码换行/缩进）折叠成单个空格，让被换行打断的句子仍能匹配。
+   * 没命中时也回传第一个元素的文本，便于报错时定位。
    */
-  function pageQuery(selector, textContains) {
-    const el = document.querySelector(selector);
-    if (!el) return null;
-    const full = (el.textContent || "").replace(/\s+/g, " ").trim();
+  function pageQuery(selector, textContains, index) {
+    const els = Array.from(document.querySelectorAll(selector));
+    if (!els.length) return null;
+    const squeeze = (el) => (el.textContent || "").replace(/\s+/g, " ").trim();
+    // 没有 textContains 时，集合就是 selector 的全部匹配
+    const hits = textContains ? els.filter((el) => squeeze(el).includes(textContains)) : els;
+    const want = Number(index) || 0;
+    const el = hits[want];
+    const first = squeeze(els[0]);
     return {
-      tag: el.tagName.toLowerCase(),
-      text: full.slice(0, 200),
-      hasText: !textContains || full.includes(textContains),
+      tag: (el || els[0]).tagName.toLowerCase(),
+      text: (el ? squeeze(el) : first).slice(0, 200),
+      hasText: !!el,
+      count: els.length,
+      hits: hits.length,
+      want,
     };
   }
 
-  function pageClick(selector, index) {
-    const el = document.querySelectorAll(selector)[index];
-    if (!el) return false;
-    el.click();
-    return true;
+  /** 点击元素：过滤规则必须与 pageQuery 一致，保证点到的是校验通过的那个 */
+  function pageClick(selector, index, textContains) {
+    const els = Array.from(document.querySelectorAll(selector));
+    const want = Number(index) || 0;
+    let seen = 0;
+    for (const el of els) {
+      const text = (el.textContent || "").replace(/\s+/g, " ").trim();
+      if (textContains && !text.includes(textContains)) continue;
+      if (seen === want) {
+        el.click();
+        return true;
+      }
+      seen++;
+    }
+    return false;
   }
 
   function pageFill(selector, value) {
@@ -192,15 +209,16 @@ const HamsterExecutor = (() => {
   /**
    * 轮询等待元素出现（可附加文本条件）；导航瞬间的注入失败视为"还没出现"，
    * 但连续失败达到上限则判定页面本身不可注入，直接抛错。
+   * textContains 为 null 时退化为原来的“selector 第 index 个元素”。
    */
-  async function pollForElement(state, selector, timeout, interval, textContains) {
+  async function pollForElement(state, selector, timeout, interval, textContains, index) {
     const deadline = Date.now() + Math.max(0, timeout);
     let consecutiveFails = 0;
     for (;;) {
       if (state.stopRequested) throw new StopError();
       let info = null;
       try {
-        info = await inject(state.tabId, pageQuery, [selector, textContains || null]);
+        info = await inject(state.tabId, pageQuery, [selector, textContains || null, index || 0]);
         consecutiveFails = 0;
       } catch (error) {
         if (error instanceof StopError) throw error;
@@ -208,12 +226,17 @@ const HamsterExecutor = (() => {
         if (consecutiveFails >= INJECT_FAIL_LIMIT) throw error;
         /* 偶发注入失败不算超时，继续轮询到 deadline 为止 */
       }
+      // 无文本条件时只要求取到元素（index 越界则交给调用方报错，不在这里白等）
       if (info && (!textContains || info.hasText)) return info;
       if (Date.now() >= deadline) {
-        // 区分“元素没出现”和“元素在但文字不对”，后者把实际文本带出来便于排查
         if (!info) throw new Error(`timeout waiting for element ${selector} (${timeout}ms)`);
+        // 区分“文本没命中”和“文本命中但 index 越界”，并把实际文本带出来便于排查
+        const detail =
+          info.hits === 0
+            ? `none contains "${textContains}"`
+            : `only ${info.hits} contains "${textContains}", index ${info.want} is out of range`;
         throw new Error(
-          `element ${selector} found but its text does not contain "${textContains}"; actual: "${info.text.slice(0, 80)}"`
+          `element ${selector} found (${info.count} match${info.count > 1 ? "es" : ""}) but ${detail}; first text: "${info.text.slice(0, 80)}"`
         );
       }
       await sleep(Math.min(interval, Math.max(1, deadline - Date.now())));
@@ -256,9 +279,11 @@ const HamsterExecutor = (() => {
         state,
         step.selector,
         step.timeout === undefined ? DEFAULTS.waitForTimeout : step.timeout,
-        step.interval === undefined ? DEFAULTS.waitForInterval : step.interval
+        step.interval === undefined ? DEFAULTS.waitForInterval : step.interval,
+        step.textContains
       );
-      return info.text ? `found <${info.tag}> "${info.text.slice(0, 60)}"` : `found <${info.tag}>`;
+      const label = `<${info.tag}>${step.textContains ? ` containing "${step.textContains}"` : ""}`;
+      return info.text ? `found ${label}: "${info.text.slice(0, 60)}"` : `found ${label}`;
     },
 
     async wait(step, state) {
@@ -274,10 +299,19 @@ const HamsterExecutor = (() => {
 
     async click(step, state) {
       ensureTarget(state);
-      await pollForElement(state, step.selector, step.timeout === undefined ? DEFAULTS.actionTimeout : step.timeout, 300);
-      const clicked = await inject(state.tabId, pageClick, [step.selector, step.index || 0]);
+      await pollForElement(
+        state,
+        step.selector,
+        step.timeout === undefined ? DEFAULTS.actionTimeout : step.timeout,
+        300,
+        step.textContains,
+        step.index
+      );
+      const clicked = await inject(state.tabId, pageClick, [step.selector, step.index || 0, step.textContains || null]);
       if (!clicked) throw new Error(`failed to click ${step.selector}`);
-      return `clicked ${step.selector}`;
+      return step.textContains
+        ? `clicked ${step.selector} containing "${step.textContains}"`
+        : `clicked ${step.selector}`;
     },
 
     async input(step, state) {
