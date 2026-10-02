@@ -209,5 +209,225 @@
   "errNumRange": {
     "message": "数値が範囲外です",
     "description": "数値パラメータが範囲外のときの検証エラー。フィールド名と範囲はコード側で連結。"
+  },
+  "editorModeForm": {
+    "message": "フォーム",
+    "description": "Editor tab that opens the visual form builder."
+  },
+  "editorModeCode": {
+    "message": "コード",
+    "description": "Editor tab that opens the raw JSON editor."
+  },
+  "addStep": {
+    "message": "＋ ステップを追加",
+    "description": "Button that appends a new step with the selected action."
+  },
+  "formEmpty": {
+    "message": "ステップがまだありません。下のリストからアクションを選んで追加しましょう。",
+    "description": "Placeholder shown when the script has no steps in form mode."
+  },
+  "stepLabel": {
+    "message": "ステップ",
+    "description": "Tooltip of the step number badge in the form editor."
+  },
+  "stepNamePlaceholder": {
+    "message": "ステップ名（任意）",
+    "description": "Placeholder of the step name input."
+  },
+  "optionalLabel": {
+    "message": "失敗時はスキップ",
+    "description": "Checkbox that makes a step skippable when it fails."
+  },
+  "moveUp": {
+    "message": "上へ",
+    "description": "Button that moves a step one position up."
+  },
+  "moveDown": {
+    "message": "下へ",
+    "description": "Button that moves a step one position down."
+  },
+  "removeStep": {
+    "message": "ステップを削除",
+    "description": "Button that deletes a step."
+  },
+  "noParamsHint": {
+    "message": "このアクションにパラメータはありません。",
+    "description": "Shown for actions that take no parameters."
+  },
+  "fieldUrl": {
+    "message": "URL",
+    "description": "Field label for the URL parameter."
+  },
+  "fieldNewTab": {
+    "message": "新しいタブで開く",
+    "description": "Field label for the newTab flag."
+  },
+  "fieldActive": {
+    "message": "前面で表示（フォーカス）",
+    "description": "Field label for the active flag."
+  },
+  "fieldLoadTimeout": {
+    "message": "読み込みタイムアウト（ms）",
+    "description": "Field label for the page load timeout."
+  },
+  "fieldSelector": {
+    "message": "CSS セレクタ",
+    "description": "Field label for the CSS selector."
+  },
+  "fieldTextContains": {
+    "message": "テキストを含む",
+    "description": "Field label for the text match condition."
+  },
+  "fieldTimeout": {
+    "message": "タイムアウト（ms）",
+    "description": "Field label for a timeout in milliseconds."
+  },
+  "fieldInterval": {
+    "message": "ポーリング間隔（ms）",
+    "description": "Field label for the polling interval."
+  },
+  "fieldIndex": {
+    "message": "インデックス",
+    "description": "Field label for the element index."
+  },
+  "fieldValue": {
+    "message": "入力する値",
+    "description": "Field label for the text typed into an input."
+  },
+  "fieldKey": {
+    "message": "キー",
+    "description": "Field label for the keyboard key."
+  },
+  "fieldTo": {
+    "message": "スクロール先",
+    "description": "Field label for the scroll target."
+  },
+  "fieldY": {
+    "message": "Y 座標",
+    "description": "Field label for the vertical scroll position."
+  },
+  "fieldBehavior": {
+    "message": "スクロール方法",
+    "description": "Field label for the scroll behavior."
+  },
+  "fieldMs": {
+    "message": "待機時間（ms）",
+    "description": "Field label for a fixed wait duration."
+  },
+  "fieldAttr": {
+    "message": "属性名",
+    "description": "Field label for the attribute name."
+  },
+  "fieldLabel": {
+    "message": "ラベル",
+    "description": "Field label for the log label."
+  },
+  "optTop": {
+    "message": "先頭",
+    "description": "Scroll target option: top of the page."
+  },
+  "optBottom": {
+    "message": "最下部",
+    "description": "Scroll target option: bottom of the page."
+  },
+  "optSelector": {
+    "message": "要素を指定",
+    "description": "Scroll target option: a specific element."
+  },
+  "optY": {
+    "message": "Y 座標",
+    "description": "Scroll target option: an absolute Y position."
+  },
+  "optAuto": {
+    "message": "自動",
+    "description": "Scroll behavior option: instant, browser default."
+  },
+  "optSmooth": {
+    "message": "スムーズ",
+    "description": "Scroll behavior option: animated."
+  },
+  "optInstant": {
+    "message": "即時",
+    "description": "Scroll behavior option: jump immediately."
+  },
+  "actionOpen": {
+    "message": "ページを開く",
+    "description": "Action name shown in the form editor."
+  },
+  "actionWaitForElement": {
+    "message": "要素を待つ",
+    "description": "Action name shown in the form editor."
+  },
+  "actionWait": {
+    "message": "待機",
+    "description": "Action name shown in the form editor."
+  },
+  "actionClick": {
+    "message": "クリック",
+    "description": "Action name shown in the form editor."
+  },
+  "actionInput": {
+    "message": "入力欄に記入",
+    "description": "Action name shown in the form editor."
+  },
+  "actionPress": {
+    "message": "キーを押す",
+    "description": "Action name shown in the form editor."
+  },
+  "actionScroll": {
+    "message": "スクロール",
+    "description": "Action name shown in the form editor."
+  },
+  "actionAssert": {
+    "message": "検証",
+    "description": "Action name shown in the form editor."
+  },
+  "actionExtract": {
+    "message": "内容を抽出",
+    "description": "Action name shown in the form editor."
+  },
+  "actionClose": {
+    "message": "タブを閉じる",
+    "description": "Action name shown in the form editor."
+  },
+  "tmplOpen": {
+    "message": "チェックインページを開く（バックグラウンドタブ）",
+    "description": "Name of the first step in the new-script template."
+  },
+  "tmplWaitForElement": {
+    "message": "ボタンが出るまで待つ",
+    "description": "Name of a template step."
+  },
+  "tmplInput": {
+    "message": "ニックネームを入力",
+    "description": "Name of a template step."
+  },
+  "tmplPress": {
+    "message": "ニックネームを送信",
+    "description": "Name of a template step."
+  },
+  "tmplClick": {
+    "message": "チェックインをクリック",
+    "description": "Name of a template step."
+  },
+  "tmplWait": {
+    "message": "結果を待つ",
+    "description": "Name of a template step."
+  },
+  "tmplAssert": {
+    "message": "成功を確認",
+    "description": "Name of a template step."
+  },
+  "tmplClose": {
+    "message": "タブを閉じる",
+    "description": "Name of the last step in the new-script template."
+  },
+  "insertStep": {
+    "message": "ここにステップを挿入",
+    "description": "Tooltip of the + button between two steps; the action currently selected in the dropdown is appended after a dot."
+  },
+  "insertStepEnd": {
+    "message": "末尾に追加",
+    "description": "Tooltip of the + button that appends a step at the end of the list."
   }
 }

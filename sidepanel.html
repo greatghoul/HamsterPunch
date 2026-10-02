@@ -22,7 +22,25 @@
       <div id="script-editor" class="hidden">
         <h2 id="editorTitle" class="section-title"></h2>
         <input id="scriptName" class="input" type="text" />
-        <textarea id="scriptJson" class="json-editor" spellcheck="false"></textarea>
+
+        <!-- 编辑模式切换：表单 / 代码 -->
+        <div class="mode-switch" role="tablist">
+          <button id="modeForm" class="mode-btn active" type="button" role="tab" aria-selected="true"></button>
+          <button id="modeCode" class="mode-btn" type="button" role="tab" aria-selected="false"></button>
+        </div>
+
+        <!-- 表单模式：逐个动作的可视化编辑器 -->
+        <div id="formEditor" class="form-editor">
+          <ol id="stepList" class="step-list"></ol>
+          <p id="formEmpty" class="empty hidden"></p>
+          <div class="add-step-row">
+            <select id="addStepAction" class="select"></select>
+            <button id="addStep" class="btn" type="button"></button>
+          </div>
+        </div>
+
+        <!-- 代码模式：直接编辑 JSON -->
+        <textarea id="scriptJson" class="json-editor hidden" spellcheck="false"></textarea>
         <p id="editorError" class="error hidden"></p>
         <div class="btn-row">
           <button id="saveScript" class="btn btn-primary" type="button"></button>

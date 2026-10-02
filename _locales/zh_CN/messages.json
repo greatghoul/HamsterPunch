@@ -209,5 +209,225 @@
   "errNumRange": {
     "message": "数值超出允许范围",
     "description": "数值参数超范围的校验错误；字段名和允许范围由代码拼接在后。"
+  },
+  "editorModeForm": {
+    "message": "表单模式",
+    "description": "Editor tab that opens the visual form builder."
+  },
+  "editorModeCode": {
+    "message": "代码模式",
+    "description": "Editor tab that opens the raw JSON editor."
+  },
+  "addStep": {
+    "message": "＋ 添加步骤",
+    "description": "Button that appends a new step with the selected action."
+  },
+  "formEmpty": {
+    "message": "还没有步骤，从下面的下拉框里挑一个动作加进来吧。",
+    "description": "Placeholder shown when the script has no steps in form mode."
+  },
+  "stepLabel": {
+    "message": "步骤",
+    "description": "Tooltip of the step number badge in the form editor."
+  },
+  "stepNamePlaceholder": {
+    "message": "步骤名称（可选）",
+    "description": "Placeholder of the step name input."
+  },
+  "optionalLabel": {
+    "message": "失败时跳过",
+    "description": "Checkbox that makes a step skippable when it fails."
+  },
+  "moveUp": {
+    "message": "上移",
+    "description": "Button that moves a step one position up."
+  },
+  "moveDown": {
+    "message": "下移",
+    "description": "Button that moves a step one position down."
+  },
+  "removeStep": {
+    "message": "删除步骤",
+    "description": "Button that deletes a step."
+  },
+  "noParamsHint": {
+    "message": "这个动作不需要参数。",
+    "description": "Shown for actions that take no parameters."
+  },
+  "fieldUrl": {
+    "message": "URL",
+    "description": "Field label for the URL parameter."
+  },
+  "fieldNewTab": {
+    "message": "在新标签页打开",
+    "description": "Field label for the newTab flag."
+  },
+  "fieldActive": {
+    "message": "前台显示（聚焦）",
+    "description": "Field label for the active flag."
+  },
+  "fieldLoadTimeout": {
+    "message": "加载超时（毫秒）",
+    "description": "Field label for the page load timeout."
+  },
+  "fieldSelector": {
+    "message": "CSS 选择器",
+    "description": "Field label for the CSS selector."
+  },
+  "fieldTextContains": {
+    "message": "文本包含",
+    "description": "Field label for the text match condition."
+  },
+  "fieldTimeout": {
+    "message": "超时（毫秒）",
+    "description": "Field label for a timeout in milliseconds."
+  },
+  "fieldInterval": {
+    "message": "轮询间隔（毫秒）",
+    "description": "Field label for the polling interval."
+  },
+  "fieldIndex": {
+    "message": "序号",
+    "description": "Field label for the element index."
+  },
+  "fieldValue": {
+    "message": "填入内容",
+    "description": "Field label for the text typed into an input."
+  },
+  "fieldKey": {
+    "message": "按键",
+    "description": "Field label for the keyboard key."
+  },
+  "fieldTo": {
+    "message": "滚动目标",
+    "description": "Field label for the scroll target."
+  },
+  "fieldY": {
+    "message": "Y 坐标",
+    "description": "Field label for the vertical scroll position."
+  },
+  "fieldBehavior": {
+    "message": "滚动方式",
+    "description": "Field label for the scroll behavior."
+  },
+  "fieldMs": {
+    "message": "等待时长（毫秒）",
+    "description": "Field label for a fixed wait duration."
+  },
+  "fieldAttr": {
+    "message": "属性名",
+    "description": "Field label for the attribute name."
+  },
+  "fieldLabel": {
+    "message": "标签",
+    "description": "Field label for the log label."
+  },
+  "optTop": {
+    "message": "顶部",
+    "description": "Scroll target option: top of the page."
+  },
+  "optBottom": {
+    "message": "底部",
+    "description": "Scroll target option: bottom of the page."
+  },
+  "optSelector": {
+    "message": "指定元素",
+    "description": "Scroll target option: a specific element."
+  },
+  "optY": {
+    "message": "Y 坐标",
+    "description": "Scroll target option: an absolute Y position."
+  },
+  "optAuto": {
+    "message": "自动",
+    "description": "Scroll behavior option: instant, browser default."
+  },
+  "optSmooth": {
+    "message": "平滑",
+    "description": "Scroll behavior option: animated."
+  },
+  "optInstant": {
+    "message": "立即",
+    "description": "Scroll behavior option: jump immediately."
+  },
+  "actionOpen": {
+    "message": "打开页面",
+    "description": "Action name shown in the form editor."
+  },
+  "actionWaitForElement": {
+    "message": "等待元素",
+    "description": "Action name shown in the form editor."
+  },
+  "actionWait": {
+    "message": "固定等待",
+    "description": "Action name shown in the form editor."
+  },
+  "actionClick": {
+    "message": "点击",
+    "description": "Action name shown in the form editor."
+  },
+  "actionInput": {
+    "message": "填写输入框",
+    "description": "Action name shown in the form editor."
+  },
+  "actionPress": {
+    "message": "按键",
+    "description": "Action name shown in the form editor."
+  },
+  "actionScroll": {
+    "message": "滚动",
+    "description": "Action name shown in the form editor."
+  },
+  "actionAssert": {
+    "message": "校验",
+    "description": "Action name shown in the form editor."
+  },
+  "actionExtract": {
+    "message": "提取内容",
+    "description": "Action name shown in the form editor."
+  },
+  "actionClose": {
+    "message": "关闭标签页",
+    "description": "Action name shown in the form editor."
+  },
+  "tmplOpen": {
+    "message": "打开签到页（后台标签页）",
+    "description": "Name of the first step in the new-script template."
+  },
+  "tmplWaitForElement": {
+    "message": "等按钮出现",
+    "description": "Name of a template step."
+  },
+  "tmplInput": {
+    "message": "填昵称",
+    "description": "Name of a template step."
+  },
+  "tmplPress": {
+    "message": "提交昵称",
+    "description": "Name of a template step."
+  },
+  "tmplClick": {
+    "message": "点击签到",
+    "description": "Name of a template step."
+  },
+  "tmplWait": {
+    "message": "等结果",
+    "description": "Name of a template step."
+  },
+  "tmplAssert": {
+    "message": "确认成功",
+    "description": "Name of a template step."
+  },
+  "tmplClose": {
+    "message": "关闭标签页",
+    "description": "Name of the last step in the new-script template."
+  },
+  "insertStep": {
+    "message": "在此插入新步骤",
+    "description": "Tooltip of the + button between two steps; the action currently selected in the dropdown is appended after a dot."
+  },
+  "insertStepEnd": {
+    "message": "添加到末尾",
+    "description": "Tooltip of the + button that appends a step at the end of the list."
   }
 }

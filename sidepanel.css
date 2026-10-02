@@ -352,3 +352,313 @@ body {
 .run-logs p {
   margin: 0;
 }
+
+/* ---------- 编辑模式切换 ---------- */
+
+.mode-switch {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(138, 115, 97, 0.08);
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mode-btn:hover {
+  color: var(--fg);
+}
+
+.mode-btn.active {
+  background: var(--card);
+  color: var(--accent-dark);
+  box-shadow: 0 1px 2px rgba(63, 45, 29, 0.12);
+}
+
+/* ---------- 表单模式 ---------- */
+
+.form-editor {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+  text-align: left;
+}
+
+.step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 两步之间的插入条：中间一个 ＋，点一下就插到这个位置 */
+.step-gap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 14px;
+  margin: 2px 0 4px;
+  padding-left: 10px;
+}
+
+.gap-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.gap-btn {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.gap-btn:hover,
+.gap-btn:focus-visible {
+  opacity: 1;
+  color: var(--accent-dark);
+  border-color: var(--accent);
+  transform: scale(1.2);
+}
+
+.step-card.just-added {
+  animation: step-flash 1.2s ease;
+}
+
+@keyframes step-flash {
+  0%,
+  40% {
+    border-color: var(--accent);
+    background: rgba(245, 158, 11, 0.14);
+  }
+  100% {
+    border-color: var(--border);
+    background: var(--card);
+  }
+}
+
+.step-card {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.step-card.invalid {
+  border-color: var(--danger);
+}
+
+.step-card-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-index {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--accent-dark);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.step-name {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--fg);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.step-name:hover {
+  border-color: var(--border);
+}
+
+.step-name:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--bg);
+}
+
+.step-tools {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.icon-btn:hover:not(:disabled) {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.step-action-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.step-action {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.step-optional {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.step-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.field-check {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.field-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.field-check .field-label {
+  font-weight: 400;
+}
+
+.field-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.step-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.step-error {
+  margin: 8px 0 0;
+  color: var(--danger);
+  font-size: 11px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.add-step-row {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0 12px;
+}
+
+.select {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--fg);
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--accent);
+}

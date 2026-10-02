@@ -209,5 +209,225 @@
   "errNumRange": {
     "message": "숫자가 허용 범위를 벗어났습니다",
     "description": "숫자 매개변수가 범위를 벗어난 검증 오류. 필드명과 범위는 코드에서 덧붙임."
+  },
+  "editorModeForm": {
+    "message": "양식",
+    "description": "Editor tab that opens the visual form builder."
+  },
+  "editorModeCode": {
+    "message": "코드",
+    "description": "Editor tab that opens the raw JSON editor."
+  },
+  "addStep": {
+    "message": "＋ 단계 추가",
+    "description": "Button that appends a new step with the selected action."
+  },
+  "formEmpty": {
+    "message": "아직 단계가 없습니다. 아래에서 동작을 골라 추가해 보세요.",
+    "description": "Placeholder shown when the script has no steps in form mode."
+  },
+  "stepLabel": {
+    "message": "단계",
+    "description": "Tooltip of the step number badge in the form editor."
+  },
+  "stepNamePlaceholder": {
+    "message": "단계 이름(선택)",
+    "description": "Placeholder of the step name input."
+  },
+  "optionalLabel": {
+    "message": "실패 시 건너뛰기",
+    "description": "Checkbox that makes a step skippable when it fails."
+  },
+  "moveUp": {
+    "message": "위로",
+    "description": "Button that moves a step one position up."
+  },
+  "moveDown": {
+    "message": "아래로",
+    "description": "Button that moves a step one position down."
+  },
+  "removeStep": {
+    "message": "단계 삭제",
+    "description": "Button that deletes a step."
+  },
+  "noParamsHint": {
+    "message": "이 동작에는 매개변수가 없습니다.",
+    "description": "Shown for actions that take no parameters."
+  },
+  "fieldUrl": {
+    "message": "URL",
+    "description": "Field label for the URL parameter."
+  },
+  "fieldNewTab": {
+    "message": "새 탭에서 열기",
+    "description": "Field label for the newTab flag."
+  },
+  "fieldActive": {
+    "message": "앞에서 표시(포커스)",
+    "description": "Field label for the active flag."
+  },
+  "fieldLoadTimeout": {
+    "message": "로드 제한 시간(ms)",
+    "description": "Field label for the page load timeout."
+  },
+  "fieldSelector": {
+    "message": "CSS 선택자",
+    "description": "Field label for the CSS selector."
+  },
+  "fieldTextContains": {
+    "message": "텍스트 포함",
+    "description": "Field label for the text match condition."
+  },
+  "fieldTimeout": {
+    "message": "제한 시간(ms)",
+    "description": "Field label for a timeout in milliseconds."
+  },
+  "fieldInterval": {
+    "message": "폴링 간격(ms)",
+    "description": "Field label for the polling interval."
+  },
+  "fieldIndex": {
+    "message": "순번",
+    "description": "Field label for the element index."
+  },
+  "fieldValue": {
+    "message": "입력할 값",
+    "description": "Field label for the text typed into an input."
+  },
+  "fieldKey": {
+    "message": "키",
+    "description": "Field label for the keyboard key."
+  },
+  "fieldTo": {
+    "message": "스크롤 대상",
+    "description": "Field label for the scroll target."
+  },
+  "fieldY": {
+    "message": "Y 좌표",
+    "description": "Field label for the vertical scroll position."
+  },
+  "fieldBehavior": {
+    "message": "스크롤 방식",
+    "description": "Field label for the scroll behavior."
+  },
+  "fieldMs": {
+    "message": "대기 시간(ms)",
+    "description": "Field label for a fixed wait duration."
+  },
+  "fieldAttr": {
+    "message": "속성 이름",
+    "description": "Field label for the attribute name."
+  },
+  "fieldLabel": {
+    "message": "라벨",
+    "description": "Field label for the log label."
+  },
+  "optTop": {
+    "message": "맨 위",
+    "description": "Scroll target option: top of the page."
+  },
+  "optBottom": {
+    "message": "맨 아래",
+    "description": "Scroll target option: bottom of the page."
+  },
+  "optSelector": {
+    "message": "요소 지정",
+    "description": "Scroll target option: a specific element."
+  },
+  "optY": {
+    "message": "Y 좌표",
+    "description": "Scroll target option: an absolute Y position."
+  },
+  "optAuto": {
+    "message": "자동",
+    "description": "Scroll behavior option: instant, browser default."
+  },
+  "optSmooth": {
+    "message": "부드럽게",
+    "description": "Scroll behavior option: animated."
+  },
+  "optInstant": {
+    "message": "즉시",
+    "description": "Scroll behavior option: jump immediately."
+  },
+  "actionOpen": {
+    "message": "페이지 열기",
+    "description": "Action name shown in the form editor."
+  },
+  "actionWaitForElement": {
+    "message": "요소 대기",
+    "description": "Action name shown in the form editor."
+  },
+  "actionWait": {
+    "message": "대기",
+    "description": "Action name shown in the form editor."
+  },
+  "actionClick": {
+    "message": "클릭",
+    "description": "Action name shown in the form editor."
+  },
+  "actionInput": {
+    "message": "입력창 채우기",
+    "description": "Action name shown in the form editor."
+  },
+  "actionPress": {
+    "message": "키 누르기",
+    "description": "Action name shown in the form editor."
+  },
+  "actionScroll": {
+    "message": "스크롤",
+    "description": "Action name shown in the form editor."
+  },
+  "actionAssert": {
+    "message": "검증",
+    "description": "Action name shown in the form editor."
+  },
+  "actionExtract": {
+    "message": "내용 추출",
+    "description": "Action name shown in the form editor."
+  },
+  "actionClose": {
+    "message": "탭 닫기",
+    "description": "Action name shown in the form editor."
+  },
+  "tmplOpen": {
+    "message": "출석 페이지 열기(백그라운드 탭)",
+    "description": "Name of the first step in the new-script template."
+  },
+  "tmplWaitForElement": {
+    "message": "버튼 나타날 때까지 대기",
+    "description": "Name of a template step."
+  },
+  "tmplInput": {
+    "message": "닉네임 입력",
+    "description": "Name of a template step."
+  },
+  "tmplPress": {
+    "message": "닉네임 제출",
+    "description": "Name of a template step."
+  },
+  "tmplClick": {
+    "message": "출석 클릭",
+    "description": "Name of a template step."
+  },
+  "tmplWait": {
+    "message": "결과 대기",
+    "description": "Name of a template step."
+  },
+  "tmplAssert": {
+    "message": "성공 확인",
+    "description": "Name of a template step."
+  },
+  "tmplClose": {
+    "message": "탭 닫기",
+    "description": "Name of the last step in the new-script template."
+  },
+  "insertStep": {
+    "message": "여기에 단계 삽입",
+    "description": "Tooltip of the + button between two steps; the action currently selected in the dropdown is appended after a dot."
+  },
+  "insertStepEnd": {
+    "message": "맨 끝에 추가",
+    "description": "Tooltip of the + button that appends a step at the end of the list."
   }
 }
